@@ -6,11 +6,11 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:31:23 by edchung           #+#    #+#             */
-/*   Updated: 2017/09/30 20:29:46 by edchung          ###   ########.fr       */
+/*   Updated: 2017/10/19 21:18:51 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar(char c)
 {

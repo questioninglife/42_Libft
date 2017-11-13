@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 17:01:02 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/07 00:45:33 by edchung          ###   ########.fr       */
+/*   Created: 2017/09/22 23:26:10 by edchung           #+#    #+#             */
+/*   Updated: 2017/11/07 01:08:15 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_putendl(char const *s)
 {
-	while (*s)
-		ft_putchar(*s++);
+	ft_putstr(s);
+	ft_putchar('\n');
 }

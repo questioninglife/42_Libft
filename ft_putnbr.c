@@ -5,32 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 20:25:07 by edchung           #+#    #+#             */
-/*   Updated: 2017/10/13 15:50:54 by edchung          ###   ########.fr       */
+/*   Created: 2017/10/16 22:51:48 by edchung           #+#    #+#             */
+/*   Updated: 2017/11/12 23:19:35 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	dbd(int n)
+static void		putdigit(int n)
 {
-	if (n >= 10 || n < -10)
-	{
-		dbd(n / 10);
-		if (n < 0)
-			ft_putchar(((n % 10) * (-1)) + 48);
-        else
-			ft_putchar((n % 10) + 48);
-	}
-	else if (n < 0)
-		ft_putchar((-1) * n + 48);
+	if (n > -10 && n < 10)
+		ft_putchar((n < 0 ? n * -1 : n) + '0');
 	else
-		ft_putchar(n + 48);	
+	{
+		putdigit(n / 10);
+		ft_putchar((n < 0 ? (n % 10) * -1 : n % 10) + '0');
+	}
 }
 
-void	ft_putnbr(int n)
+void			ft_putnbr(int n)
 {
 	if (n < 0)
 		ft_putchar('-');
-	dbd(n);
+	putdigit(n);
 }

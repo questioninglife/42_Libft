@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 17:01:02 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/07 00:45:33 by edchung          ###   ########.fr       */
+/*   Created: 2017/10/19 21:25:54 by edchung           #+#    #+#             */
+/*   Updated: 2017/11/06 20:04:24 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+/*
+** The ft_strnew() function allocates with malloc() and returns a "fresh"
+** string ending with '\0'.
+** Each character of the string is initialized at '\0'.
+** If the allocation fails, the function returns NULL.
+*/
+
+char	*ft_strnew(size_t size)
 {
-	while (*s)
-		ft_putchar(*s++);
+	char *new;
+	char *n;
+
+	if (!(new = (char *)malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	n = new;
+	while (size--)
+		*new++ = '\0';
+	return (n);
 }

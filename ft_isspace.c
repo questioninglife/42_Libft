@@ -6,14 +6,14 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/13 15:59:23 by edchung           #+#    #+#             */
-/*   Updated: 2017/10/13 16:45:51 by edchung          ###   ########.fr       */
+/*   Updated: 2017/10/19 21:18:29 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int		ft_isspace(int c)
 {
 	return (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r'
-				|| c == ' ')
+				|| c == ' ');
 }
