@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:27:06 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/09 21:19:08 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/14 00:50:25 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,7 @@
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	t_list *t;
-
-	t = *alst;
-	if (alst && del)
-	{
-		while (*alst)
-		{
-			t = (*alst)->next;
-			del(*alst->content, *alst->content_size);
-			free(*alst);
-			*alst = t;
-		}
-		*alst = NULL;
-	}
+	if ((*alst)->next)
+		ft_lstdel(&(*alst)->next, del);
+	ft_lstdelone(&(*alst), del);
 }

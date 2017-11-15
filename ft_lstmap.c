@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:27:18 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/09 22:12:16 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/13 23:06:44 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,20 @@
 
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list	*t;
+	t_list	*l;
+	t_list	*ll;
 
-	if (f && *lst)
+	if (!lst)
+		return (NULL);
+	else if (!(l = f(ft_lstnew(lst->content, lst->content_size))))
+		return (NULL);
+	l = f(lst);
+	ll = l;
+	while (lst->next)
 	{
-		t = lst;
-		while (lst)
-		{
-			lst = f(lst);
-			lst = lst->next;
-		}
-		return (t);
+		l->next = f(lst->next);
+		l = l->next;
+		lst = lst->next;
 	}
-	else
-		return (0);
+	return (ll);
 }

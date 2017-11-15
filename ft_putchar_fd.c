@@ -6,13 +6,13 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 15:43:21 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/07 00:45:19 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/13 19:32:32 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

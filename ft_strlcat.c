@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:24:38 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/12 23:25:43 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/14 01:00:27 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 		while (--size)
 			*dst++ = *src++;
 		*dst = '\0';
-		return (d + s);
 	}
+	return (d + s);
 }

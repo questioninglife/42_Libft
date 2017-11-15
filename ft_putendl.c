@@ -6,13 +6,13 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/22 23:26:10 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/07 01:08:15 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/13 00:43:27 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+void	ft_putendl(const char *s)
 {
 	ft_putstr(s);
 	ft_putchar('\n');

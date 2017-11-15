@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 17:33:41 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/12 23:21:57 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/13 19:32:56 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 ** i.e., s1 minus the combined length of s1 and s2.
 */
 
-char	*strcat(char *s1, const char *s2)
+char	*ft_strcat(char *s1, const char *s2)
 {
 	char *p;
 

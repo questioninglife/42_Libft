@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:25:18 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/12 23:26:29 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/13 20:56:32 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 ** The ft_strncat() function returns the pointer s1.
 */
 
-char	*strncat(char *s1, const char *s2, size_t n)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	char	*s;
 

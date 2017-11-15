@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 16:43:47 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/12 23:04:41 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/15 01:35:10 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 ** If n is negative, '-' counts as a digit for string purposes.
 */
 
-unsigned int		ft_intlen(int n)
+size_t		ft_intlen(int n)
 {
-	unsigned int i;
+	size_t	l;
 
-	i = 0;
+	l = 0;
 	if (n < 0)
-		++i;
+		++l;
 	while (n /= 10)
-		++i;
-	return (i);
+		++l;
+	return (l);
 }

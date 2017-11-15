@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:26:20 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/12 22:59:56 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/13 23:43:37 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char				**ft_strsplit(const char *s, char c)
 	if (!s || !c)
 		return (0);
 	rsize = word_count(s, c) + 1;
-	if (!r = (char **)ft_memalloc((sizeof(char *) * rsize)))
+	if (!(r = (char **)ft_memalloc((sizeof(char *) * rsize))))
 		return (NULL);
 	rr = r;
 	while (--rsize)

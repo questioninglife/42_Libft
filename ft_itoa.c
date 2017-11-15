@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 15:26:14 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/10 22:37:33 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/14 23:54:15 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,26 @@
 
 char			*ft_itoa(int n)
 {
-	unsigned int	l;
+	size_t			l;
 	char			*i;
 	char			*ii;
 	char			*iii;
 
 	l = ft_intlen(n);
-	if (!(i = ft_memalloc(l + 1)))
+	if (!(i = (char *)ft_memalloc(sizeof(char) * (l + 1))))
 		return (NULL);
 	ii = i;
 	if (n == 0)
-		*i++ = '0';
+		*ii++ = '0';
 	else if (n < 0)
-		*i++ = '-';
-	iii = i;
+		*ii++ = '-';
+	iii = ii;
 	while (n)
 	{
-		*i++ = (n < 0 ? -n % 10 : n % 10) + '0';
+		*ii++ = (n < 0 ? -n % 10 : n % 10) + '0';
 		n = n / 10;
 	}
-	*i = '\0';
+	*ii = '\0';
 	ft_strrev(iii);
-	return (ii);
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:28:04 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/12 23:08:50 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/14 19:33:49 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char *p;
+	char	*d;
+	char	*s;
 
-	p = (unsigned char *)dst;
+	d = (char *)dst;
+	s = (char *)src;
 	while (n--)
-		*p++ = *((unsigned char *)src++);
+		*d++ = *s++;
 	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 15:59:41 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/12 23:18:23 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/13 23:18:44 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void		putdigit(int n, int fd)
 		ft_putchar_fd(n + 48, fd);
 	else
 	{
-		putdigit(n / 10);
+		putdigit(n / 10, fd);
 		if (n < 0)
 			ft_putchar_fd(((n % 10) * (-1)) + 48, fd);
 		else
