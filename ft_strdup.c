@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:23:55 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/15 01:36:46 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/16 23:49:53 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@
 char	*ft_strdup(const char *s1)
 {
 	const char		*s;
+	const char		*l;
 	char			*c;
 	char			*cc;
-	size_t			l;
 
 	s = s1;
-	l = 0;
-	while (*s++)
+	l = s1;
+	while (*l)
 		++l;
-	if (!(c = (char *)ft_memalloc(sizeof(char) * (l + 1))))
+	if (!(c = (char *)ft_memalloc(sizeof(char) * (l - s1 + 1))))
 		return (NULL);
 	cc = c;
 	while (*s)

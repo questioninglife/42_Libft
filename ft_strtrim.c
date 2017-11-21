@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:26:39 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/15 01:34:22 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/17 02:13:37 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,27 @@
 
 char	*ft_strtrim(const char *s)
 {
-	const char		*ss;
+	const char		*start;
+	const char		*end;
 	char			*t;
 	char			*tt;
-	size_t			l;
 
 	if (!s)
 		return (NULL);
-	l = ft_strlen(s) - 1;
-	while (l && (s[l] == ' ' || s[l] == '\n' || s[l] == '\t'))
-		--l;
-	ss = s;
-	while (l-- && (*ss == ' ' || *ss == '\n' || *ss == '\t'))
-		++ss;
-	if (!(t = (char *)ft_memalloc(sizeof(char) * (l + 1))))
+	start = s;
+	while (*start && (*start == ' ' || *start == '\n' || *start == '\t'))
+		++start;
+	end = start;
+	while (*end)
+		++end;
+	while ((start < end - 1) && (*(end - 1) == ' ' || *(end - 1) == '\n'
+				|| *(end - 1) == '\t'))
+		--end;
+	if (!(t = (char *)ft_memalloc(sizeof(char) * (end - start + 1))))
 		return (NULL);
 	tt = t;
-	while (l--)
-		*tt++ = *ss++;
+	while (start < end)
+		*tt++ = *start++;
 	*tt = '\0';
 	return (t);
 }

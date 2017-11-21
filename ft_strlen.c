@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 16:08:17 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/12 18:41:46 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/15 21:12:49 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,17 @@
 ** The ft_strlen() function returns the number of characters that precede
 ** the terminating NUL character.
 **
-** While *s is not '\0', increment count.
-** Return the count, i.e, the length of the string, excluding '\0'.
+** Let const char *ss = s.
+** While *ss is not '\0', increment pointer ss.
+** Return the ss - s, i.e, the length of the string, excluding '\0'.
 */
 
 size_t	ft_strlen(const char *s)
 {
-	const char *i;
+	const char		*ss;
 
-	i = s;
-	while (*i)
-		++i;
-	return (i - s);
+	ss = s;
+	while (*ss)
+		++ss;
+	return (ss - s);
 }

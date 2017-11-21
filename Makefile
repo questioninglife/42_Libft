@@ -6,7 +6,7 @@
 #    By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/13 00:53:35 by edchung           #+#    #+#              #
-#    Updated: 2017/11/14 22:38:09 by edchung          ###   ########.fr        #
+#    Updated: 2017/11/16 23:36:52 by edchung          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = libft.a
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC =	ft_atoi.c \
+SRC =	ft_abs.c \
+		ft_atoi.c \
 		ft_bzero.c \
 		ft_intlen.c \
 		ft_is{alnum,alpha,ascii,digit,lower,space,upper}.c \

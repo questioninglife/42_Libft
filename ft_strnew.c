@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:25:54 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/06 20:04:24 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/17 03:08:02 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
 
 char	*ft_strnew(size_t size)
 {
-	char *new;
-	char *n;
+	char		*new;
+	char		*n;
 
-	if (!(new = (char *)malloc(sizeof(char) * (size + 1))))
+	if (!(new = (char *)malloc(sizeof(char) * (++size))))
 		return (NULL);
 	n = new;
 	while (size--)
-		*new++ = '\0';
-	return (n);
+		*n++ = '\0';
+	return (new);
 }

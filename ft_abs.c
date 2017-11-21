@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
+/*   By: edchung <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/16 18:30:39 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/17 02:15:52 by edchung          ###   ########.fr       */
+/*   Created: 2017/11/16 23:25:35 by edchung           #+#    #+#             */
+/*   Updated: 2017/11/16 23:38:55 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** The isprint() function tests for any printing character, including
-** space (' ').
-*/
-
-int		ft_isprint(int c)
+int		ft_abs(int n)
 {
-	return (c >= ' ' && c <= '~');
+	return (n < 0 ? -n : n);
 }

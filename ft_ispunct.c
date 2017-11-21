@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/11 17:03:35 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/11 17:23:52 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/16 00:25:52 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@
 
 int		ft_ispunct(int c)
 {
-	return (ft_isprint(c) && !(ft_isalnum(c)) && c != ' ') ? c : 0;
+	return (ft_isprint(c) && !(ft_isalnum(c)) && c != ' ');
 }

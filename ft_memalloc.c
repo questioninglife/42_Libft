@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:27:34 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/12 23:07:40 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/19 21:24:31 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ void	*ft_memalloc(size_t size)
 {
 	void	*p;
 
-	p = (void *)malloc(size);
-	if (!p)
+	if (!(p = (void *)malloc(size)))
 		return (NULL);
 	ft_bzero(p, size);
 	return (p);

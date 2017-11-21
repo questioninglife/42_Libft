@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:26:27 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/15 00:32:08 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/18 20:30:18 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,23 @@
 char	*ft_strstr(const char *big, const char *little)
 {
 	const char		*b;
-	size_t			i;
+	const char		*l;
+	const char		*bl;
 
 	if (!*little)
 		return ((char *)big);
 	b = big;
-	while (*b++)
+	while (*b)
 	{
-		i = 0;
-		while (b[i] == little[i])
-			if (!little[1 + i++])
-				return ((char *)--b);
+		bl = b;
+		l = little;
+		while (*bl && (*bl == *l))
+		{
+			if (!(*(++l)))
+				return ((char *)b);
+			++bl;
+		}
+		++b;
 	}
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/26 18:03:40 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/14 22:33:51 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/16 23:34:33 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_abs(int n);
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 size_t				ft_intlen(int n);
