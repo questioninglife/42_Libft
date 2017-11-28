@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 19:48:16 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/27 22:10:19 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/28 01:14:09 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,4 @@ char				**ft_strsplit(const char *s, char c)
 	}
 	*r = 0;
 	return (r0);
-}
-
-int					main(void)
-{
-	char		*s = "0 0 0 0 0 0 0 0 0";
-	char		**r = ft_strsplit(s, ' ');
-
-	while (*r)
-	{
-		printf("%s\n", *r);
-		++r;
-	}
-	return (0);
 }
