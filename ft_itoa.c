@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 15:26:14 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/18 20:58:33 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/27 19:41:50 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,30 +19,28 @@
 ** If the allocation fails, the function returns NULL.
 */
 
-static void		int_str(int n, char *s)
+static void		itos(char **s, int n)
 {
-	if (n <= -10 || n >= 10)
-	{
-		int_str(n / 10, s);
-		int_str(n % 10, s);
-	}
+	if (n > -10 || n < 10)
+		*(*s)++ = (n < 0 ? -n : n) + '0';
 	else
-		*s++ = (n < 0 ? -n : n) + '0';
+	{
+		itos(s, n / 10);
+		*(*s)++ = (n < 0 ? (n % 10) * -1 : n % 10) + '0';
+	}
 }
 
 char			*ft_itoa(int n)
 {
-	size_t		l;
-	char		*i_start;
-	char		*i;
+	char		*s_start;
+	char		*s;
 
-	l = ft_intlen(n);
-	if (!(i_start = (char *)ft_memalloc(sizeof(char) * (l + 1))))
+	if (!(s_start = (char *)ft_memalloc(sizeof(char) * ((ft_intlen(n) + 1)))))
 		return (NULL);
-	i = i_start;
+	s = s_start;
 	if (n < 0)
-		*i++ = '-';
-	int_str(n, i);
-	*i = '\0';
-	return (i_start);
+		*s++ = '-';
+	itos(&s, n);
+	*s = '\0';
+	return (s_start);
 }

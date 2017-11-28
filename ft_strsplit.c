@@ -5,19 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/19 21:26:20 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/20 19:39:01 by edchung          ###   ########.fr       */
+/*   Created: 2017/11/27 19:48:16 by edchung           #+#    #+#             */
+/*   Updated: 2017/11/27 20:25:56 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
-
-/*
-** The ft_strplit() function allocates with malloc(3) and returns an array of
-** "fresh" strings by splitting s, using the character c as a delimiter,
-** all ending with '\0', including the array itself.
-*/
 
 static size_t		word_count(const char *s, char c)
 {
@@ -32,64 +25,30 @@ static size_t		word_count(const char *s, char c)
 	return (n - s);
 }
 
-
-static size_t		word_size(const char *s, char c)
-{
-	const char		*start;
-	const char		*end;
-
-	start = s;
-	end = s;
-	while (*end && *end != c)
-		++end;
-	return (end - start);
-}
-
-static char			**splitstr(const char *s, char c, char **r, size_t r_size)
-{
-	char			**r_start;
-	size_t			w_size;
-
-	r_start = r;
-	while (--r_size)
-	{
-		while (*s == c)
-			++s;
-		w_size = word_size(s, c) + 1;
-		if (!(**r = (char *)ft_memalloc(w_size)))
-			return (NULL);
-		while (--w_size)
-			*(*r++) = *(s++);
-		**r = '\0';
-		++r;
-	}
-	*r = 0;
-	return (r_start);
-}
-
 char				**ft_strsplit(const char *s, char c)
 {
+	const char		*ss;
+	const char		*s0;
 	char			**r;
-	size_t			r_size;
-	
+	char			**r0;
+
 	if (!s)
-		return (0);
-	r_size = word_count(s, c) + 1;
-	if (!(r = (char **)ft_memalloc(sizeof(char *) * r_size)))
 		return (NULL);
-	if (!splitstr(s, c, &r, r_size))
+	ss = s;
+	if (!(r = (char **)ft_memalloc(sizeof(char *) * (word_count(s, c) + 1))))
 		return (NULL);
-	return (r);
+	r0 = r;
+	s0 = s;
+	while (*ss++)
+	{
+		if (*ss == c || *ss == '\0')
+		{
+			if (*(ss - 1) != c)
+				*r++ = ft_strsub(s0, 0, ss - s0);
+			else
+				++s0;
+		}
+	}
+	*r = NULL;
+	return (r0);
 }
-
-/*
-int					main(void)
-{
-	char		*s = "      split       this for   me  !       ";
-	char		**r = ft_strsplit(s, ' ');
-
-	while (*r)
-		printf("%s\n", (*r)++);
-	return (0);
-}
-*/
