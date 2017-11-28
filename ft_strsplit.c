@@ -6,11 +6,12 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 19:48:16 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/27 20:54:55 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/27 22:10:19 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 /*
 ** The ft_strplit() function allocates with malloc(3) and returns an array of
@@ -51,10 +52,23 @@ char				**ft_strsplit(const char *s, char c)
 		{
 			if (*(ss - 1) != c)
 				*r++ = ft_strsub(s0, 0, ss - s0);
-			else
-				s0 = ss;
+			if (*ss == c)
+				s0 = ss + 1;
 		}
 	}
 	*r = 0;
 	return (r0);
+}
+
+int					main(void)
+{
+	char		*s = "0 0 0 0 0 0 0 0 0";
+	char		**r = ft_strsplit(s, ' ');
+
+	while (*r)
+	{
+		printf("%s\n", *r);
+		++r;
+	}
+	return (0);
 }
