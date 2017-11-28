@@ -6,11 +6,17 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 19:48:16 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/27 20:25:56 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/27 20:54:55 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** The ft_strplit() function allocates with malloc(3) and returns an array of
+** "fresh" strings by splitting s, using the character c as a delimiter,
+** all ending with '\0', including the array itself.
+*/
 
 static size_t		word_count(const char *s, char c)
 {
@@ -46,9 +52,9 @@ char				**ft_strsplit(const char *s, char c)
 			if (*(ss - 1) != c)
 				*r++ = ft_strsub(s0, 0, ss - s0);
 			else
-				++s0;
+				s0 = ss;
 		}
 	}
-	*r = NULL;
+	*r = 0;
 	return (r0);
 }
