@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:27:22 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/14 20:48:34 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/29 04:47:12 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 
 	if (!(new = (t_list *)ft_memalloc(sizeof(t_list))))
 		return (NULL);
-	else if (!content || !(content_size > 0))
+	else if (!content || !content_size)
 	{
 		new->content = NULL;
 		new->content_size = 0;

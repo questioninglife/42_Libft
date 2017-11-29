@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:12:17 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/06 20:02:06 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/29 01:57:37 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_strdel(char **as)
 {
-	if (*as)
+	if (as && *as)
 	{
 		free(*as);
 		*as = NULL;

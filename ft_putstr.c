@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 17:01:02 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/13 00:44:06 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/29 03:29:36 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_putstr(const char *s)
 {
-	while (*s)
-		ft_putchar(*s++);
+	if (s)
+		while (*s)
+			write(1, s++, 1);
 }

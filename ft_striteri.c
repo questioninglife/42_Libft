@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:24:20 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/06 20:02:43 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/29 02:00:19 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int i;
 
 	i = 0;
-	while (*s && *f)
-		f(i++, s++);
+	if (s && f)
+		while (*s)
+			f(i++, s++);
 }

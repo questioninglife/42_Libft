@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:28:15 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/12 23:16:42 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/29 08:30:36 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		d += len;
 		s += len;
 		while (len--)
-			*(--d) = *(--s);
+			*--d = *--s;
 	}
 	else
-	{
 		while (len--)
 			*d++ = *s++;
-	}
-	return (d);
+	return (dst);
 }

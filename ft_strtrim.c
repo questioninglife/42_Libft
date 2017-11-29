@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:26:39 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/17 02:13:37 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/29 02:46:44 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strtrim(const char *s)
 	end = start;
 	while (*end)
 		++end;
-	while ((start < end - 1) && (*(end - 1) == ' ' || *(end - 1) == '\n'
+	while ((start < end) && (*(end - 1) == ' ' || *(end - 1) == '\n'
 				|| *(end - 1) == '\t'))
 		--end;
 	if (!(t = (char *)ft_memalloc(sizeof(char) * (end - start + 1))))

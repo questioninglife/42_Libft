@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 19:58:52 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/07 01:14:09 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/29 02:21:13 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_strclr(char *s)
 {
-	while (*s)
-		*s++ = '\0';
+	if (s)
+		ft_bzero(s, ft_strlen(s));
 }

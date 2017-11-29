@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:27:11 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/09 22:24:26 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/29 05:52:20 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
+	t_list		*t;
+
+	t = lst;
 	if (f)
 	{
-		while (lst)
+		while (t)
 		{
-			f(lst);
-			lst = lst->next;
+			f(t);
+			t = t->next;
 		}
 	}
 }

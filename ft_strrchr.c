@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:26:11 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/13 23:41:59 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/29 02:20:40 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@
 ** otherwise return last.
 */
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *str, int c)
 {
-	const char *last;
+	char	*s;
+	char	*last;
 
+	s = (char *)str;
 	last = NULL;
 	while (*s)
 	{
@@ -36,5 +38,5 @@ char	*ft_strrchr(const char *s, int c)
 		else
 			last = s++;
 	}
-	return (c == '\0') ? (char *)s : (char *)last;
+	return (c == '\0') ? s : last;
 }

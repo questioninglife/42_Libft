@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 21:26:33 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/13 23:51:42 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/29 02:54:12 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,14 @@
 
 char	*ft_strsub(const char *str, unsigned int start, size_t len)
 {
-	char	*s;
-	char	*sub;
-	char	*ssub;
+	const char		*s;
+	char			*sub;
+	char			*ssub;
 
 	if (!str || !(sub = (char *)ft_memalloc(sizeof(char) * (len + 1))))
 		return (NULL);
+	s = str + start;
 	ssub = sub;
-	s = (char *)str;
-	s += start;
 	while (len--)
 		*ssub++ = *s++;
 	*ssub = '\0';

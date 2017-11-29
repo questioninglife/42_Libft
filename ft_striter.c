@@ -6,7 +6,7 @@
 /*   By: edchung <edchung@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 23:18:24 by edchung           #+#    #+#             */
-/*   Updated: 2017/11/06 20:02:35 by edchung          ###   ########.fr       */
+/*   Updated: 2017/11/29 01:59:28 by edchung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	while (*s && *f)
-		f(s++);
+	if (s && f)
+		while (*s)
+			f(s++);
 }
